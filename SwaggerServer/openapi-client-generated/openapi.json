@@ -1,0 +1,99 @@
+{
+  "openapi" : "3.0.3",
+  "info" : {
+    "title" : "Калькулятор",
+    "description" : "-Лучшй калькулятор в мире",
+    "contact" : {
+      "name" : "Andrey Kuustov",
+      "url" : "https://github.com/Andrey999r"
+    },
+    "version" : "1.0.11"
+  },
+  "servers" : [ {
+    "url" : "http://localhost:8080/api/v1",
+    "description" : "Dev server"
+  } ],
+  "tags" : [ {
+    "name" : "Calculation",
+    "description" : "Сложение и вычитание чисел"
+  } ],
+  "paths" : {
+    "/plus/{a}/{b}" : {
+      "get" : {
+        "tags" : [ "Calculation" ],
+        "summary" : "Складывает два числа",
+        "description" : "Складывает два числа",
+        "operationId" : "plus",
+        "parameters" : [ {
+          "name" : "a",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "b",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    },
+    "/minus/{a}/{b}" : {
+      "get" : {
+        "tags" : [ "Calculation" ],
+        "summary" : "Вычитает два числа",
+        "description" : "Вычитает два числа",
+        "operationId" : "minus",
+        "parameters" : [ {
+          "name" : "a",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "b",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "components" : { }
+}
